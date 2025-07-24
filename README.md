@@ -25,7 +25,7 @@ TermFlow transforms your terminal into a dynamic canvas displaying beautiful, re
 - **Wave Animations**: Energy waves radiate from active nodes
 - **Performance Optimized**: 30 FPS frame-limited rendering with intelligent buffering
 - **Responsive Design**: Adapts to terminal size changes automatically
-- **Clean Exit**: Handles Ctrl+C gracefully with proper terminal cleanup
+- **Clean Exit**: Press 'q' to quit or handle Ctrl+C gracefully with proper terminal cleanup
 
 ## 📦 Installation
 
@@ -49,7 +49,7 @@ Simply run:
 python3 termflow.py
 ```
 
-To exit, press `Ctrl+C` - TermFlow will clean up and restore your terminal properly.
+To exit, press `q` to quit gracefully, or use `Ctrl+C` for immediate termination. TermFlow will clean up and restore your terminal properly in both cases.
 
 ## 📊 What It Shows
 
