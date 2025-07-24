@@ -125,12 +125,8 @@ class UnifiedVisualizer:
         signal.signal(signal.SIGINT, self.handle_exit)
         
         # Pre-load Claude metrics
-        print("\nInitializing Claude metrics...", flush=True)
-        self.update_claude_metrics(show_progress=True)
+        self.update_claude_metrics(show_progress=False)
         self.startup_metrics = self.claude_metrics.copy()
-        print(f"\nLoaded: ${self.claude_metrics['total_cost']:.2f} | {self.claude_metrics['total_input_tokens'] + self.claude_metrics['total_output_tokens']:,} tokens | {len(self.processed_messages):,} messages", flush=True)
-        print(f"Ready to monitor for new activity...\n", flush=True)
-        time.sleep(1)
         
         # Start metrics thread
         self.start_metrics_thread()
@@ -738,7 +734,7 @@ class UnifiedVisualizer:
         with self.metrics_lock:
             # Title
             output.write(f'\033[{info_y};2H')
-            output.write(f"{self.colors['dim']}System & Claude Activity Monitor{self.colors['reset']}")
+            output.write(f"{self.colors['dim']}TermFlow{self.colors['reset']}")
             
             # Network rates
             output.write(f'\033[{info_y+1};2H')
