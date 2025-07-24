@@ -51,6 +51,19 @@ python3 termflow.py
 
 To exit, press `q` to quit gracefully, or use `Ctrl+C` for immediate termination. TermFlow will clean up and restore your terminal properly in both cases.
 
+### 🌐 Sphere Visualization
+
+For an alternative stunning 3D visualization, try the sphere mode:
+```bash
+python3 termflow_sphere.py
+```
+
+This renders a rotating 3D sphere with:
+- Real-time wireframe rendering with depth-based shading
+- System metrics mapped to sphere rotation speed and activity
+- Dynamic particle effects flowing across the sphere surface
+- Smooth 30 FPS animation with terminal-optimized rendering
+
 ## 📊 What It Shows
 
 ### System Metrics
