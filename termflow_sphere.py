@@ -640,7 +640,7 @@ class SphereVisualizer:
                     if 0 <= sx < self.width and 0 <= sy < self.height and sz > -0.5:
                         # Pulsing intensity
                         pulse = math.sin(arc['phase'] + t * math.pi) * 0.5 + 0.5
-                        arc_char = '⚡' if pulse > 0.7 else '∘' if pulse > 0.4 else '·'
+                        arc_char = '*' if pulse > 0.7 else '∘' if pulse > 0.4 else '·'
                         color = self.colors['claude_high'] if arc['life'] > 0.5 else self.colors['claude_mid']
                         buffer[sy][sx] = f"{color}{arc_char}{self.colors['reset']}"
         
