@@ -769,8 +769,21 @@ class SphereVisualizer:
         sys.stdout.flush()
         
     def _create_mini_bar(self, value, width):
-        """Create a minimal progress bar"""
-        filled = int(value * width)
+        """Create a minimal progress bar with improved scaling for lower values"""
+        # Apply a power curve to make lower values more visible
+        # Using sqrt makes 10% show as ~32%, 25% as 50%, etc.
+        scaled_value = math.sqrt(value) if value > 0 else 0
+        
+        # Additionally boost very low values to ensure visibility
+        if value > 0.01:  # If there's any activity at all
+            # Ensure at least 1 bar shows for any activity
+            filled = max(1, int(scaled_value * width))
+        else:
+            filled = 0
+            
+        # Cap at maximum width
+        filled = min(filled, width)
+        
         bar = '▪' * filled + '·' * (width - filled)
         return bar
         
