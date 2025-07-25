@@ -207,8 +207,10 @@ class SphereVisualizer:
         breath_scale = 1.0 + math.sin(self.breath_phase) * self.breath_amplitude
         
         # Convert to screen coordinates
+        # Move sphere up by 10% of height
+        center_y_offset = int(self.height * 0.1)
         screen_x = int(self.width // 2 + x_final * self.sphere_radius * scale * breath_scale)
-        screen_y = int(self.height // 2 - y_final * self.sphere_radius * scale * breath_scale * 0.5)  # Aspect ratio correction
+        screen_y = int(self.height // 2 - center_y_offset - y_final * self.sphere_radius * scale * breath_scale * 0.5)  # Aspect ratio correction
         
         return screen_x, screen_y, z_final
         
@@ -581,7 +583,7 @@ class SphereVisualizer:
         
         # Calculate border radius for clipping
         center_x = self.width // 2
-        center_y = self.height // 2
+        center_y = self.height // 2 - int(self.height * 0.1)  # Move up by 10%
         border_radius = self.sphere_radius + 3  # Same as border
         
         # Render particle trails first (behind main points)
@@ -752,7 +754,10 @@ class SphereVisualizer:
             
             # Center - overall activity
             activity_text = f"◈ {int(self.smoothed_activity * 100)}%"
-            self._draw_text(buffer, self.width // 2 - 5, self.height - 2, 
+            # Calculate proper centering based on actual text length
+            text_length = len(activity_text)
+            x_position = self.width // 2 - text_length // 2
+            self._draw_text(buffer, x_position, self.height - 2, 
                           f"{self.colors['accent']}{activity_text}")
             
         # Render buffer to screen
@@ -810,7 +815,7 @@ class SphereVisualizer:
     def _draw_sphere_border(self, buffer, z_buffer):
         """Draw a bright animated border around the sphere"""
         center_x = self.width // 2
-        center_y = self.height // 2
+        center_y = self.height // 2 - int(self.height * 0.1)  # Move up by 10%
         radius = self.sphere_radius + 3  # Slightly larger than sphere for clear border
         
         # Number of border dots for a perfect circle
