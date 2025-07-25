@@ -4,12 +4,9 @@
   <strong>🌊 A mesmerizing terminal-based real-time visualization of system metrics and Claude CLI activity</strong>
 </p>
 
+https://github.com/user-attachments/assets/a2339aee-b22d-41e0-af8c-25c4cb590833
 
-https://github.com/user-attachments/assets/817c82be-fa9d-47fb-a6b2-3a98bcad49a8
-
-
-https://github.com/user-attachments/assets/d1736d98-99f9-47d4-b7d7-70fd2f4055a5
-
+https://github.com/user-attachments/assets/b76956cf-9a4f-45bb-b0f7-61e2e82d6e87
 
 <p align="center">
   <a href="#features">Features</a> •
