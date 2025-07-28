@@ -6,7 +6,9 @@
 
 https://github.com/user-attachments/assets/a2339aee-b22d-41e0-af8c-25c4cb590833
 
-https://github.com/user-attachments/assets/b76956cf-9a4f-45bb-b0f7-61e2e82d6e87
+https://github.com/user-attachments/assets/6e51615c-32c1-48ad-b364-18205d4d5e20
+
+https://github.com/user-attachments/assets/460c9091-99d8-4533-9acb-a1b7ba907509
 
 <p align="center">
   <a href="#features">Features</a> •
